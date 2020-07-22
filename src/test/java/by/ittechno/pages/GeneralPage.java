@@ -7,9 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.List;
 
 public class GeneralPage extends  AbstractPage {
@@ -24,7 +26,7 @@ public class GeneralPage extends  AbstractPage {
     @FindBy(id = "head_geo_select")
     private WebElement cityChangeButton;
 
-    @FindBy(className = "select_city_search_input")
+    @FindBy(id = "city_select_input")
     private WebElement selectCitySearchInput;
 
     @FindBy(xpath = "//div[@class ='date']/../div[@class = 'title']//a")
@@ -39,8 +41,8 @@ public class GeneralPage extends  AbstractPage {
     @FindBy(xpath = "//a[@rel ='loginform']")
     private WebElement personalAccountButton;
 
-    public GeneralPage(WebDriver driver) {
-        super(driver);
+    public GeneralPage(EventFiringWebDriver driver) {
+        super();
     }
 
     @Step("Поиск товаров в каталоге")
@@ -73,16 +75,15 @@ public class GeneralPage extends  AbstractPage {
         return new NewsPage(driver);
     }
     @Step("Выбор категории в каталоге")
-    public CatalogPage selectCategoryInCatalog(String category) {
+    public CatalogPage selectCategoryInCatalog(String category) throws Exception {
         browser.click(openCatalogMenuButton);
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(categoryInCatalogMenu));
         for (WebElement item : categoryInCatalogMenu) {
-            if (item.equals(category)) {
+            if (item.getText().equalsIgnoreCase(category)) {
                 browser.doubleClick(item);
-                return new CatalogPage(driver);
             }
         }
-        return null;
+        return  new CatalogPage(driver);
     }
     @Step("Переход к экрану логина")
     public LoginPage goToLoginPage() {

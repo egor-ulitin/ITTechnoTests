@@ -72,12 +72,10 @@ public class WebDriverListener implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement webElement, WebDriver webDriver) {
-
     }
 
     @Override
     public void afterFindBy(By by, WebElement webElement, WebDriver webDriver) {
-
     }
 
     @Override
@@ -122,13 +120,13 @@ public class WebDriverListener implements WebDriverEventListener {
 
     @Override
     public void onException(Throwable throwable, WebDriver webDriver) {
-        takeScreenshot(webDriver);
+                   takeScreenshot(webDriver);
     }
-
     @Attachment(value = "Exception screenshot")
     public byte[] takeScreenshot(WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
+
     @Override
     public <X> void beforeGetScreenshotAs(OutputType<X> outputType) {
 

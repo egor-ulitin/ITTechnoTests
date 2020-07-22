@@ -1,4 +1,5 @@
 by\ittechno\pages\GeneralPage.class
+by\ittechno\tests\CitySelectionThroughSearchTest.class
 by\ittechno\WebDriverListener.class
 by\ittechno\tests\LoginTest.class
 by\ittechno\DriverInstance.class
@@ -6,9 +7,12 @@ by\ittechno\tests\BaseTest.class
 by\ittechno\pages\CatalogPage.class
 by\ittechno\pages\CartPage.class
 by\ittechno\pages\NewsPage.class
+by\ittechno\tests\OpenDescriptionNewsTest.class
 by\ittechno\pages\AbstractPage.class
 by\ittechno\pages\LoginPage.class
+by\ittechno\tests\IncreaseQuantityProductInCartTest.class
 by\ittechno\tests\OpenCartTest.class
+by\ittechno\tests\OpenCatalogTest.class
 by\ittechno\reporting\MyLogger.class
 by\ittechno\Browser.class
 by\ittechno\bo\User.class

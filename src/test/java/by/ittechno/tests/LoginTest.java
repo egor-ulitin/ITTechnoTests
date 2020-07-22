@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest {
     @Test
     public void loginTest() {
-        Boolean checkIsItLoginPage = new GeneralPage(driver).goToLoginPage().isLoginPage();
+        boolean checkIsItLoginPage = new GeneralPage(driver).goToLoginPage().isLoginPage();
         Assert.assertTrue(checkIsItLoginPage, "Переход на экран логина не выполнен");
     }
 }

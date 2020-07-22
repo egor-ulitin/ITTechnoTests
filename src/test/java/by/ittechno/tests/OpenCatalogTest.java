@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class OpenCatalogTest extends BaseTest{
     @Test
-    public void openCatalogTest() {
-        Boolean checkIsItCatalogPage = new GeneralPage(driver).selectCategoryInCatalog("Dect").isCatalogPage();
+    public void openCatalogTest() throws Exception {
+        boolean checkIsItCatalogPage = new GeneralPage(driver).selectCategoryInCatalog("DECT").isCatalogPage();
         Assert.assertTrue(checkIsItCatalogPage, "Каталог не открылся");
     }
 }

@@ -12,42 +12,53 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import java.util.HashMap;
 
 public class DriverInstance {
-    static HashMap<String, WebDriver> drivers = new HashMap<String, WebDriver>();
+    static HashMap<String, EventFiringWebDriver> drivers = new HashMap<String, EventFiringWebDriver>();
+    static Browser browser;
     private DriverInstance() {
     }
-    public static WebDriver getDriverInstance(String name, String driverType) {
-        if (drivers != null && drivers.containsKey(name)) {
-            return drivers.get(name);
-        } else {
+    public static EventFiringWebDriver getDriverInstance(String driverType) {
+        if (drivers != null && drivers.containsKey(driverType)) {
+            return drivers.get(driverType);
+        }
+        else {
             if (driverType.equals("FirefoxDriver")) {
-                WebDriver driver = firefoxDriverCreator();
-                drivers.put(name, driver);
+                EventFiringWebDriver driver = firefoxDriverCreator();
+                drivers.put(driverType, driver);
                 return driver;
             }
             else {
-                WebDriver driver = chromeDriverCreator();
-                drivers.put(name, driver);
+                EventFiringWebDriver driver = chromeDriverCreator();
+                WebDriverListener listener = new WebDriverListener();
+                driver.register(listener);
+                drivers.put(driverType, driver);
                 return driver;
             }
         }
     }
     //Для chrome
-    private static WebDriver chromeDriverCreator() {
+    private static EventFiringWebDriver chromeDriverCreator() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
-        EventFiringWebDriver webDriverEventListener = new EventFiringWebDriver(new ChromeDriver());
+        EventFiringWebDriver webDriverEventListener = new EventFiringWebDriver(new ChromeDriver(chromeOptions));
+        return webDriverEventListener;
+    }
+    private static EventFiringWebDriver firefoxDriverCreator() {
+        System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.addArguments("start-maximized");
+        EventFiringWebDriver webDriverEventListener = new EventFiringWebDriver(new FirefoxDriver(firefoxOptions));
         WebDriverListener listener = new WebDriverListener();
         webDriverEventListener.register(listener);
         return webDriverEventListener;
     }
-    private static WebDriver firefoxDriverCreator() {
-        System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.addArguments("start-maximized");
-        EventFiringWebDriver webDriverEventListener = new EventFiringWebDriver(new FirefoxDriver());
-        WebDriverListener listener = new WebDriverListener();
-        webDriverEventListener.register(listener);
-        return webDriverEventListener;
+    public static Browser getInstanceBrowser(EventFiringWebDriver webDriver) {
+        if (browser != null) {
+            return browser;
+        }
+        else {
+            browser = new Browser(webDriver);
+            return browser;
+        }
     }
 }

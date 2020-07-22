@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,8 +15,8 @@ public class CatalogPage extends AbstractPage {
     @FindBy(xpath = "//div[@class = 'smallparamscont catalog-rewrite-item']//div[@class = 'pic']")
     private List<WebElement> productPhoto;
 
-    public CatalogPage(WebDriver driver) {
-        super(driver);
+    public CatalogPage(EventFiringWebDriver driver) {
+        super();
     }
 
     @Step("Переход к экрану подробного описания товара")
@@ -24,7 +25,7 @@ public class CatalogPage extends AbstractPage {
         return new DescriptionProductPage(driver);
     }
     public boolean isCatalogPage() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(productPhoto));
+       // new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(productPhoto));
         return productPhoto.size() != 0;
     }
 }

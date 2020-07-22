@@ -3,6 +3,7 @@ C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\CatalogPa
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\tests\BaseTest.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\CartPage.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\reporting\MyLogger.java
+C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\tests\CitySelectionThroughSearchTest.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\bo\User.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\NewsPage.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\WebDriverListener.java
@@ -16,4 +17,3 @@ C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\LoginPage
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\AbstractPage.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\tests\OpenCatalogTest.java
 C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\pages\GeneralPage.java
-C:\Users\gtern\IdeaProjects\newProject\src\test\java\by\ittechno\tests\CitySelectionThroughSearch.java

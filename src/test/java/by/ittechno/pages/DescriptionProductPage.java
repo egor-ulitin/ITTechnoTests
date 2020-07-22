@@ -4,13 +4,14 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class DescriptionProductPage extends AbstractPage{
     @FindBy(xpath = "//span[@onclick = 'return pre_click(this);']")
     private WebElement buyProductButton;
 
-    public DescriptionProductPage(WebDriver driver) {
-        super(driver);
+    public DescriptionProductPage(EventFiringWebDriver driver) {
+        super();
     }
 
     public Boolean isDescriptionProductPage() {
