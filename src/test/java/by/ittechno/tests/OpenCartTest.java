@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 public class OpenCartTest extends BaseTest {
     @Test
     public void openCart() throws InterruptedException {
-        boolean checkIsItCatalog = new GeneralPage(driver).searchProductsInCatalog("Камера").isCatalogPage();
+        boolean checkIsItCatalog = new GeneralPage(browser).searchProductsInCatalog("Камера").isCatalogPage();
         Assert.assertTrue(checkIsItCatalog, "Каталог не открылся");
-        boolean checkIsItDescriptionProductPage = new CatalogPage(driver).goToDescriptionProduct(1)
+        boolean checkIsItDescriptionProductPage = new CatalogPage(browser).goToDescriptionProduct(1)
                 .isDescriptionProductPage();
         Assert.assertTrue(checkIsItDescriptionProductPage, "Подробное описание странички не открылось");
-        boolean isCartOpen = new DescriptionProductPage(driver).goToCartPage().isCartPage();
+        boolean isCartOpen = new DescriptionProductPage(browser).goToCartPage().isCartPage();
         Assert.assertTrue(isCartOpen, "Корзина не открылась");
     }
 

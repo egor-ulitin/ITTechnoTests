@@ -1,5 +1,6 @@
 package by.ittechno.pages;
 
+import by.ittechno.Browser;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage extends AbstractPage {
 
-    public CartPage(EventFiringWebDriver driver) {
-        super();
+    public CartPage(Browser browser) {
+        super(browser);
     }
     @FindBy(className = "h2")
     private WebElement checkoutText;
@@ -22,7 +23,7 @@ public class CartPage extends AbstractPage {
     @FindBy(id = "kluk")
     private WebElement numberProducts;
     public boolean isCartPage() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(checkoutText));
+        new WebDriverWait(browser.getDriver(), 10).until(ExpectedConditions.visibilityOf(checkoutText));
         System.out.println(checkoutText.getText());
         return checkoutText.getText().contains("Оформление товара");
     }

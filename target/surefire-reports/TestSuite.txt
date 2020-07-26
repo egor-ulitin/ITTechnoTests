@@ -1,24 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 92.307 s <<< FAILURE! - in TestSuite
-changeCityThroughSearch(by.ittechno.tests.CitySelectionThroughSearchTest)  Time elapsed: 3.571 s  <<< FAILURE!
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 125.829 s <<< FAILURE! - in TestSuite
+changeCityThroughSearch(by.ittechno.tests.CitySelectionThroughSearchTest)  Time elapsed: 2.634 s  <<< FAILURE!
 java.lang.AssertionError: Изменить город не удалось expected [Москва] but found [Минск]
-	at by.ittechno.tests.CitySelectionThroughSearchTest.changeCityThroughSearch(CitySelectionThroughSearchTest.java:12)
+	at by.ittechno.tests.CitySelectionThroughSearchTest.changeCityThroughSearch(CitySelectionThroughSearchTest.java:11)
 
-loginTest(by.ittechno.tests.LoginTest)  Time elapsed: 1.201 s  <<< FAILURE!
+loginTest(by.ittechno.tests.LoginTest)  Time elapsed: 0.996 s  <<< FAILURE!
 java.lang.AssertionError: Переход на экран логина не выполнен did not expect to find [true] but found [false]
 	at by.ittechno.tests.LoginTest.loginTest(LoginTest.java:11)
 
-openCatalogTest(by.ittechno.tests.OpenCatalogTest)  Time elapsed: 2.999 s  <<< FAILURE!
+openCatalogTest(by.ittechno.tests.OpenCatalogTest)  Time elapsed: 2.684 s  <<< FAILURE!
 java.lang.AssertionError: Каталог не открылся did not expect to find [true] but found [false]
 	at by.ittechno.tests.OpenCatalogTest.openCatalogTest(OpenCatalogTest.java:11)
 
-openDescriptionNewsTest(by.ittechno.tests.OpenDescriptionNewsTest)  Time elapsed: 1.038 s  <<< FAILURE!
+openDescriptionNewsTest(by.ittechno.tests.OpenDescriptionNewsTest)  Time elapsed: 0.94 s  <<< FAILURE!
 java.lang.AssertionError: Подробное описание новости не открылось did not expect to find [true] but found [false]
 	at by.ittechno.tests.OpenDescriptionNewsTest.openDescriptionNewsTest(OpenDescriptionNewsTest.java:11)
-
-stopBrowser(by.ittechno.tests.BaseTest)  Time elapsed: 1.054 s  <<< FAILURE!
-java.lang.NullPointerException
-	at by.ittechno.tests.BaseTest.stopBrowser(BaseTest.java:28)
 

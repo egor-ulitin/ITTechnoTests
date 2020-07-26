@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="92.307" tests="7" errors="0" skipped="0" failures="5">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="125.829" tests="6" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,56 +58,71 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="changeCityThroughSearch" classname="by.ittechno.tests.CitySelectionThroughSearchTest" time="3.571">
+  <testcase name="changeCityThroughSearch" classname="by.ittechno.tests.CitySelectionThroughSearchTest" time="2.634">
     <failure message="Изменить город не удалось expected [Москва] but found [Минск]" type="java.lang.AssertionError">java.lang.AssertionError: Изменить город не удалось expected [Москва] but found [Минск]
-	at by.ittechno.tests.CitySelectionThroughSearchTest.changeCityThroughSearch(CitySelectionThroughSearchTest.java:12)
+	at by.ittechno.tests.CitySelectionThroughSearchTest.changeCityThroughSearch(CitySelectionThroughSearchTest.java:11)
 </failure>
-    <system-out><![CDATA[2020-07-22 11:19:49 INFO  MyLogger:8 - Clicking elementМинск Located:(397, 13)
-2020-07-22 11:19:49 INFO  MyLogger:8 - Type text in located:(290, 172)
+    <system-out><![CDATA[2020-07-27 02:47:15 INFO  MyLogger:8 - Clicking elementМинск Located:(397, 13)
+2020-07-27 02:47:16 INFO  MyLogger:8 - Type text in located:(290, 172)
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 9443
+Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 19879
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-июл. 22, 2020 11:19:40 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+июл. 27, 2020 2:47:08 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 log4j:ERROR Could not find value for key log4j.appender.file
 log4j:ERROR Could not instantiate appender named "file".
 ]]></system-err>
   </testcase>
-  <testcase name="increaseQuantityProductInCartTest" classname="by.ittechno.tests.IncreaseQuantityProductInCartTest" time="24.61"/>
-  <testcase name="loginTest" classname="by.ittechno.tests.LoginTest" time="1.201">
+  <testcase name="increaseQuantityProductInCartTest" classname="by.ittechno.tests.IncreaseQuantityProductInCartTest" time="22.078"/>
+  <testcase name="loginTest" classname="by.ittechno.tests.LoginTest" time="0.996">
     <failure message="Переход на экран логина не выполнен did not expect to find [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: Переход на экран логина не выполнен did not expect to find [true] but found [false]
 	at by.ittechno.tests.LoginTest.loginTest(LoginTest.java:11)
 </failure>
-    <system-out><![CDATA[2020-07-22 11:20:25 INFO  MyLogger:8 - Clicking elementЛичный кабинет Located:(1237, 17)
+    <system-out><![CDATA[2020-07-27 02:48:02 INFO  MyLogger:8 - Clicking elementЛичный кабинет Located:(1237, 17)
 ]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 6679
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июл. 27, 2020 2:47:54 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
   </testcase>
-  <testcase name="openCart" classname="by.ittechno.tests.OpenCartTest" time="21.973"/>
-  <testcase name="openCatalogTest" classname="by.ittechno.tests.OpenCatalogTest" time="2.999">
+  <testcase name="openCart" classname="by.ittechno.tests.OpenCartTest" time="21.178"/>
+  <testcase name="openCatalogTest" classname="by.ittechno.tests.OpenCatalogTest" time="2.684">
     <failure message="Каталог не открылся did not expect to find [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: Каталог не открылся did not expect to find [true] but found [false]
 	at by.ittechno.tests.OpenCatalogTest.openCatalogTest(OpenCatalogTest.java:11)
 </failure>
-    <system-out><![CDATA[2020-07-22 11:20:56 INFO  MyLogger:8 - Clicking elementКаталог Located:(169, 85)
-2020-07-22 11:20:57 INFO  MyLogger:8 - Double click on an item located:(170, 427)
+    <system-out><![CDATA[2020-07-27 02:48:48 INFO  MyLogger:8 - Clicking elementКаталог Located:(169, 85)
+2020-07-27 02:48:49 INFO  MyLogger:8 - Double click on an item located:(170, 427)
 ]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 34971
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июл. 27, 2020 2:48:40 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
   </testcase>
-  <testcase name="openDescriptionNewsTest" classname="by.ittechno.tests.OpenDescriptionNewsTest" time="1.038">
+  <testcase name="openDescriptionNewsTest" classname="by.ittechno.tests.OpenDescriptionNewsTest" time="0.94">
     <failure message="Подробное описание новости не открылось did not expect to find [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: Подробное описание новости не открылось did not expect to find [true] but found [false]
 	at by.ittechno.tests.OpenDescriptionNewsTest.openDescriptionNewsTest(OpenDescriptionNewsTest.java:11)
 </failure>
-    <system-out><![CDATA[2020-07-22 11:21:03 INFO  MyLogger:8 - Move to element (189, 1682)
+    <system-out><![CDATA[2020-07-27 02:49:03 INFO  MyLogger:8 - Move to element (189, 1682)
 ]]></system-out>
-    <system-err><![CDATA[июл. 22, 2020 11:21:03 AM org.openqa.selenium.interactions.Actions moveToElement
+    <system-err><![CDATA[Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 5991
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июл. 27, 2020 2:48:55 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+июл. 27, 2020 2:49:03 AM org.openqa.selenium.interactions.Actions moveToElement
 INFO: When using the W3C Action commands, offsets are from the center of element
 ]]></system-err>
-  </testcase>
-  <testcase name="stopBrowser" classname="by.ittechno.tests.BaseTest" time="1.054">
-    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
-	at by.ittechno.tests.BaseTest.stopBrowser(BaseTest.java:28)
-</failure>
   </testcase>
 </testsuite>

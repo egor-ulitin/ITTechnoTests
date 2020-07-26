@@ -3,34 +3,38 @@
 <suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="1" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="by.ittechno.tests.OpenDescriptionNewsTest">
+      <class name="by.ittechno.tests.LoginTest">
         <methods>
-          <include name="stopBrowser"/>
           <include name="startBrowser"/>
-          <include name="openDescriptionNewsTest"/>
+          <include name="stopBrowser"/>
+          <include name="loginTest"/>
+          <include name="onTestFailure"/>
         </methods>
-      </class> <!-- by.ittechno.tests.OpenDescriptionNewsTest -->
+      </class> <!-- by.ittechno.tests.LoginTest -->
       <class name="by.ittechno.tests.OpenCatalogTest">
         <methods>
-          <include name="stopBrowser"/>
           <include name="startBrowser"/>
+          <include name="stopBrowser"/>
+          <include name="onTestFailure"/>
           <include name="openCatalogTest"/>
         </methods>
       </class> <!-- by.ittechno.tests.OpenCatalogTest -->
+      <class name="by.ittechno.tests.OpenDescriptionNewsTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="stopBrowser"/>
+          <include name="openDescriptionNewsTest"/>
+          <include name="onTestFailure"/>
+        </methods>
+      </class> <!-- by.ittechno.tests.OpenDescriptionNewsTest -->
       <class name="by.ittechno.tests.CitySelectionThroughSearchTest">
         <methods>
-          <include name="stopBrowser"/>
           <include name="startBrowser"/>
+          <include name="stopBrowser"/>
+          <include name="onTestFailure"/>
           <include name="changeCityThroughSearch"/>
         </methods>
       </class> <!-- by.ittechno.tests.CitySelectionThroughSearchTest -->
-      <class name="by.ittechno.tests.LoginTest">
-        <methods>
-          <include name="stopBrowser"/>
-          <include name="startBrowser"/>
-          <include name="loginTest"/>
-        </methods>
-      </class> <!-- by.ittechno.tests.LoginTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

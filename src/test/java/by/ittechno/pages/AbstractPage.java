@@ -12,12 +12,11 @@ import java.sql.Driver;
 
 public class AbstractPage {
 
-    protected static EventFiringWebDriver driver;
     protected static Browser browser;
-    public AbstractPage() {
-        this.driver = DriverInstance.getDriverInstance("ChromeDriver");
+    public AbstractPage(Browser browser) {
+        this.browser = browser;
       //  this.driver = driver;
-        browser = DriverInstance.getInstanceBrowser(driver);
-        PageFactory.initElements(driver, this);
+    //    browser = DriverInstance.getInstanceBrowser(driver);
+        PageFactory.initElements(browser.getDriver(), this);
     }
 }

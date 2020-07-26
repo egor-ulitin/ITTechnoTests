@@ -1,39 +1,31 @@
 package by.ittechno;
 
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import java.util.HashMap;
 
 public class DriverInstance {
-    static HashMap<String, EventFiringWebDriver> drivers = new HashMap<String, EventFiringWebDriver>();
-    static Browser browser;
+    static HashMap<String, Browser> browsers = new HashMap<String, Browser>();
     private DriverInstance() {
     }
-    public static EventFiringWebDriver getDriverInstance(String driverType) {
-        if (drivers != null && drivers.containsKey(driverType)) {
-            return drivers.get(driverType);
-        }
-        else {
+    public static Browser getDriverInstance(String driverType) {
+        if (browsers.containsKey(driverType) && browsers.get(driverType).getDriver() != null) {
+            return browsers.get(driverType);
+        } else {
             if (driverType.equals("FirefoxDriver")) {
                 EventFiringWebDriver driver = firefoxDriverCreator();
-                drivers.put(driverType, driver);
-                return driver;
-            }
-            else {
+                browsers.put(driverType, new Browser(driver));
+            } else {
                 EventFiringWebDriver driver = chromeDriverCreator();
-                WebDriverListener listener = new WebDriverListener();
-                driver.register(listener);
-                drivers.put(driverType, driver);
-                return driver;
+                browsers.put(driverType, new Browser(driver));
             }
+            return browsers.get(driverType);
         }
+
     }
     //Для chrome
     private static EventFiringWebDriver chromeDriverCreator() {
@@ -41,6 +33,8 @@ public class DriverInstance {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
         EventFiringWebDriver webDriverEventListener = new EventFiringWebDriver(new ChromeDriver(chromeOptions));
+        WebDriverListener listener = new WebDriverListener();
+        webDriverEventListener.register(listener);
         return webDriverEventListener;
     }
     private static EventFiringWebDriver firefoxDriverCreator() {
@@ -51,14 +45,5 @@ public class DriverInstance {
         WebDriverListener listener = new WebDriverListener();
         webDriverEventListener.register(listener);
         return webDriverEventListener;
-    }
-    public static Browser getInstanceBrowser(EventFiringWebDriver webDriver) {
-        if (browser != null) {
-            return browser;
-        }
-        else {
-            browser = new Browser(webDriver);
-            return browser;
-        }
     }
 }

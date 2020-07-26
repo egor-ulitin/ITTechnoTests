@@ -1,5 +1,6 @@
 package by.ittechno.pages;
 
+import by.ittechno.Browser;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,17 +11,17 @@ public class DescriptionProductPage extends AbstractPage{
     @FindBy(xpath = "//span[@onclick = 'return pre_click(this);']")
     private WebElement buyProductButton;
 
-    public DescriptionProductPage(EventFiringWebDriver driver) {
-        super();
+    public DescriptionProductPage(Browser browser) {
+        super(browser);
     }
 
     public Boolean isDescriptionProductPage() {
-        String urlPage = driver.getCurrentUrl();
+        String urlPage = browser.getDriver().getCurrentUrl();
         return urlPage.contains("productid");
     }
     @Step("Переход к корзине")
     public CartPage goToCartPage() {
         browser.click(buyProductButton);
-        return new CartPage(driver);
+        return new CartPage(browser);
     }
 }

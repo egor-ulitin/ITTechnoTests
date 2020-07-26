@@ -53,4 +53,8 @@ public class Browser {
         new Actions(driver).doubleClick(element).build().perform();
     }
 
+    public void close() {
+        driver.quit();
+        driver = null;
+    }
 }
